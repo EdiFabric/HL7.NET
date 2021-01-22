@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.Demo", "EdiFabric.Examples.HL7.Demo\EdiFabric.Examples.HL7.Demo.csproj", "{D6C6BE78-FDD2-43E8-AD96-550031CFA0E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.Common", "EdiFabric.Examples.HL7.Common\EdiFabric.Examples.HL7.Common.csproj", "{04AB8D0E-FA7A-4256-A087-0F97DE9DB1E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample files", "Sample files", "{80E8A083-361C-45C4-AEFE-179ECDBF795F}"
+	ProjectSection(SolutionItems) = preProject
+		Files\PharmacyTreatmentDispense.txt = Files\PharmacyTreatmentDispense.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Getting started", "_Getting started", "{AB50F14F-9B02-4B05-ACFF-F98AEC4BA88F}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples by feature", "Examples by feature", "{8DD45B63-D26A-4CDC-96D1-1E8B011307E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6C6BE78-FDD2-43E8-AD96-550031CFA0E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C6BE78-FDD2-43E8-AD96-550031CFA0E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C6BE78-FDD2-43E8-AD96-550031CFA0E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C6BE78-FDD2-43E8-AD96-550031CFA0E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04AB8D0E-FA7A-4256-A087-0F97DE9DB1E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04AB8D0E-FA7A-4256-A087-0F97DE9DB1E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04AB8D0E-FA7A-4256-A087-0F97DE9DB1E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04AB8D0E-FA7A-4256-A087-0F97DE9DB1E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F6BA342-24E1-42BE-BD66-47FE212B6276}
+	EndGlobalSection
+EndGlobal

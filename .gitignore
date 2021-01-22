@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/EdiFabric.Examples.HL7.Common/bin/Debug
+/EdiFabric.Examples.HL7.Common/obj/Debug
+/EdiFabric.Examples.HL7.Demo/bin/Debug
+/EdiFabric.Examples.HL7.Demo/obj/Debug
+/packages
