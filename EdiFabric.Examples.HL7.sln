@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.Comm
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample files", "Sample files", "{80E8A083-361C-45C4-AEFE-179ECDBF795F}"
 	ProjectSection(SolutionItems) = preProject
+		Files\CorruptMsh.txt = Files\CorruptMsh.txt
+		Files\MedicalRecord.txt = Files\MedicalRecord.txt
+		Files\MixedTransactions.txt = Files\MixedTransactions.txt
 		Files\PharmacyTreatmentDispense.txt = Files\PharmacyTreatmentDispense.txt
+		Files\PharmacyTreatmentDispenseCustom.txt = Files\PharmacyTreatmentDispenseCustom.txt
+		Files\PharmacyTreatmentDispenses.txt = Files\PharmacyTreatmentDispenses.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Getting started", "_Getting started", "{AB50F14F-9B02-4B05-ACFF-F98AEC4BA88F}"
@@ -18,6 +23,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Getting started", "_Gettin
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples by feature", "Examples by feature", "{8DD45B63-D26A-4CDC-96D1-1E8B011307E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.ReadHL7", "EdiFabric.Examples.HL7.ReadHL7\EdiFabric.Examples.HL7.ReadHL7.csproj", "{C7F8C62B-C859-4CF2-AC83-6041F78D5DCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.WriteHL7", "EdiFabric.Examples.HL7.WriteHL7\EdiFabric.Examples.HL7.WriteHL7.csproj", "{08B66BCF-6028-4B2B-8FF0-0F10D335201F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.ValidateHL7", "EdiFabric.Examples.HL7.ValidateHL7\EdiFabric.Examples.HL7.ValidateHL7.csproj", "{400B6A30-0001-4555-BBAC-20B8F748ADCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.JSON", "EdiFabric.Examples.HL7.JSON\EdiFabric.Examples.HL7.JSON.csproj", "{F10A17A6-6D85-4DDF-8627-B074416BE44B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.XML", "EdiFabric.Examples.HL7.XML\EdiFabric.Examples.HL7.XML.csproj", "{DB19F69A-4252-43BF-A1F7-B7A9549EC65F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +48,36 @@ Global
 		{04AB8D0E-FA7A-4256-A087-0F97DE9DB1E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04AB8D0E-FA7A-4256-A087-0F97DE9DB1E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04AB8D0E-FA7A-4256-A087-0F97DE9DB1E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7F8C62B-C859-4CF2-AC83-6041F78D5DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7F8C62B-C859-4CF2-AC83-6041F78D5DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7F8C62B-C859-4CF2-AC83-6041F78D5DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7F8C62B-C859-4CF2-AC83-6041F78D5DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08B66BCF-6028-4B2B-8FF0-0F10D335201F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B66BCF-6028-4B2B-8FF0-0F10D335201F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B66BCF-6028-4B2B-8FF0-0F10D335201F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B66BCF-6028-4B2B-8FF0-0F10D335201F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{400B6A30-0001-4555-BBAC-20B8F748ADCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{400B6A30-0001-4555-BBAC-20B8F748ADCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{400B6A30-0001-4555-BBAC-20B8F748ADCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{400B6A30-0001-4555-BBAC-20B8F748ADCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10A17A6-6D85-4DDF-8627-B074416BE44B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10A17A6-6D85-4DDF-8627-B074416BE44B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10A17A6-6D85-4DDF-8627-B074416BE44B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10A17A6-6D85-4DDF-8627-B074416BE44B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB19F69A-4252-43BF-A1F7-B7A9549EC65F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB19F69A-4252-43BF-A1F7-B7A9549EC65F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB19F69A-4252-43BF-A1F7-B7A9549EC65F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB19F69A-4252-43BF-A1F7-B7A9549EC65F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7F8C62B-C859-4CF2-AC83-6041F78D5DCB} = {8DD45B63-D26A-4CDC-96D1-1E8B011307E4}
+		{08B66BCF-6028-4B2B-8FF0-0F10D335201F} = {8DD45B63-D26A-4CDC-96D1-1E8B011307E4}
+		{400B6A30-0001-4555-BBAC-20B8F748ADCA} = {8DD45B63-D26A-4CDC-96D1-1E8B011307E4}
+		{F10A17A6-6D85-4DDF-8627-B074416BE44B} = {8DD45B63-D26A-4CDC-96D1-1E8B011307E4}
+		{DB19F69A-4252-43BF-A1F7-B7A9549EC65F} = {8DD45B63-D26A-4CDC-96D1-1E8B011307E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F6BA342-24E1-42BE-BD66-47FE212B6276}
