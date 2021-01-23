@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,10 +51,22 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidateCustomHL7Codes.cs" />
+    <Compile Include="ValidateDataElementTypes.cs" />
+    <Compile Include="ValidateFHSorBHS.cs" />
+    <Compile Include="ValidateHL7Transations.cs" />
+    <Compile Include="ValidateHL7TransationsAsync.cs" />
+    <Compile Include="ValidateHL7TransationsWithCustomCode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Examples.HL7.Common\EdiFabric.Examples.HL7.Common.csproj">
+      <Project>{04ab8d0e-fa7a-4256-a087-0f97de9db1e5}</Project>
+      <Name>EdiFabric.Examples.HL7.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

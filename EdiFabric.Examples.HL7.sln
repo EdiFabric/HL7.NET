@@ -12,7 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample files", "Sample file
 		Files\CorruptMsh.txt = Files\CorruptMsh.txt
 		Files\MedicalRecord.txt = Files\MedicalRecord.txt
 		Files\MixedTransactions.txt = Files\MixedTransactions.txt
+		Files\PharmacyTreatmentDispense.json = Files\PharmacyTreatmentDispense.json
 		Files\PharmacyTreatmentDispense.txt = Files\PharmacyTreatmentDispense.txt
+		Files\PharmacyTreatmentDispense.xml = Files\PharmacyTreatmentDispense.xml
+		Files\PharmacyTreatmentDispense2.xml = Files\PharmacyTreatmentDispense2.xml
 		Files\PharmacyTreatmentDispenseCustom.txt = Files\PharmacyTreatmentDispenseCustom.txt
 		Files\PharmacyTreatmentDispenses.txt = Files\PharmacyTreatmentDispenses.txt
 	EndProjectSection
