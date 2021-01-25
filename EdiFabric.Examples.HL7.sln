@@ -10,14 +10,19 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample files", "Sample files", "{80E8A083-361C-45C4-AEFE-179ECDBF795F}"
 	ProjectSection(SolutionItems) = preProject
 		Files\CorruptMsh.txt = Files\CorruptMsh.txt
+		Files\DispenseEscaped.txt = Files\DispenseEscaped.txt
 		Files\MedicalRecord.txt = Files\MedicalRecord.txt
 		Files\MixedTransactions.txt = Files\MixedTransactions.txt
+		Files\ObservationADD.txt = Files\ObservationADD.txt
+		Files\ObservationADD_DSC.txt = Files\ObservationADD_DSC.txt
+		Files\ObservationDSC.txt = Files\ObservationDSC.txt
 		Files\PharmacyTreatmentDispense.json = Files\PharmacyTreatmentDispense.json
 		Files\PharmacyTreatmentDispense.txt = Files\PharmacyTreatmentDispense.txt
 		Files\PharmacyTreatmentDispense.xml = Files\PharmacyTreatmentDispense.xml
 		Files\PharmacyTreatmentDispense2.xml = Files\PharmacyTreatmentDispense2.xml
 		Files\PharmacyTreatmentDispenseCustom.txt = Files\PharmacyTreatmentDispenseCustom.txt
 		Files\PharmacyTreatmentDispenses.txt = Files\PharmacyTreatmentDispenses.txt
+		Files\Query.txt = Files\Query.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Getting started", "_Getting started", "{AB50F14F-9B02-4B05-ACFF-F98AEC4BA88F}"

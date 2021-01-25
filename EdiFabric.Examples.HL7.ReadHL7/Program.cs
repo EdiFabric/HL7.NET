@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EdiFabric.Examples.HL7.ReadHL7
+﻿namespace EdiFabric.Examples.HL7.ReadHL7
 {
     class Program
     {
@@ -36,6 +30,22 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             //  Read using dynamic template resolution
             ReadHL7FileWithTemplateResolution.RunWithAssemblyFactory();
             ReadHL7FileWithTemplateResolution.RunWithTypeFactory();
+
+            //  Read file with ADD segments
+            ReadHL7FileWithADD.Run();
+
+            //  Read file with unlimited number of repeating data element in the last position
+            ReadHL7FileWithQPD.Run();
+
+            //  Read file with continuation started
+            ReadHL7FileWithDSC.Run();
+
+            //  Read file with continuation to a DSC
+            //  Placeholder segment HXX is not parsed or validated
+            ReadHL7FileWithADDandDSC.Run();
+
+            //  Read file with escaped delimiters
+            ReadHL7FileWithEscapedDelimiters.Run();
         }
     }
 }

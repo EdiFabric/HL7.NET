@@ -26,16 +26,16 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MedicalRecord.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MedicalRecord.txt");
 
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
-            List<IEdiItem> ediItems;
-            using (var hl7Reader = new Hl7Reader(ediStream, (FHS fhs, BHS bhs, MSH msh) => typeof(TSMDMT02Splitter).GetTypeInfo(), new Hl7ReaderSettings { Split = true }))
-                ediItems = hl7Reader.ReadToEnd().ToList();
+            List<IEdiItem> hl7Items;
+            using (var hl7Reader = new Hl7Reader(hl7Stream, (FHS fhs, BHS bhs, MSH msh) => typeof(TSMDMT02Splitter).GetTypeInfo(), new Hl7ReaderSettings { Split = true }))
+                hl7Items = hl7Reader.ReadToEnd().ToList();
 
             //  Find all N1 loops, they are all different ediItems
-            var obxLoop = ediItems.OfType<TSMDMT02Splitter>().Where(m => m.LoopOBX != null).SelectMany(m => m.LoopOBX);
+            var obxLoop = hl7Items.OfType<TSMDMT02Splitter>().Where(m => m.LoopOBX != null).SelectMany(m => m.LoopOBX);
             Debug.WriteLine(string.Format("OBX parts {0}", obxLoop.Count()));
         }
 
@@ -48,15 +48,15 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MedicalRecord.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MedicalRecord.txt");
 
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
-            List<IEdiItem> ediItems;
-            using (var hl7Reader = new Hl7Reader(ediStream, "EdiFabric.Templates.Hl7"))
-                ediItems = hl7Reader.ReadToEnd().ToList();
+            List<IEdiItem> hl7Items;
+            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
+                hl7Items = hl7Reader.ReadToEnd().ToList();
 
-            var medRecords = ediItems.OfType<TSMDMT02>();
+            var medRecords = hl7Items.OfType<TSMDMT02>();
             var splitMedRecords = new List<TSMDMT02>();
 
             foreach (var medRecord in medRecords)

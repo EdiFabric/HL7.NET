@@ -29,12 +29,12 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispenseCustom.txt");
 
             //  2.  Read all the contents
-            List<IEdiItem> ediItems;
+            List<IEdiItem> hl7Items;
             using (var hl7Reader = new Hl7Reader(hl7Stream, (FHS fhs, BHS bhs, MSH msh) => typeof(TSRDSO13Custom).GetTypeInfo()))
-                ediItems = hl7Reader.ReadToEnd().ToList();
+                hl7Items = hl7Reader.ReadToEnd().ToList();
 
             //  3.  Pull the required transactions
-            var customDispanses = ediItems.OfType<TSRDSO13Custom>();
+            var customDispanses = hl7Items.OfType<TSRDSO13Custom>();
         }
     }
 

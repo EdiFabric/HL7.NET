@@ -27,12 +27,12 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispenses.txt");
 
             //  2.  Read all the contents
-            List<IEdiItem> ediItems;
+            List<IEdiItem> hl7Items;
             using (var hl7Reader = new Hl7Reader(hl7Stream, AssemblyFactory))
-                ediItems = hl7Reader.ReadToEnd().ToList();
+                hl7Items = hl7Reader.ReadToEnd().ToList();
 
             //  3.  Pull the required transactions
-            var dispenses = ediItems.OfType<TSRDSO13>();
+            var dispenses = hl7Items.OfType<TSRDSO13>();
         }
 
         public static Assembly AssemblyFactory(MessageContext messageContext)
@@ -56,12 +56,12 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispenses.txt");
 
             //  2.  Read all the contents
-            List<IEdiItem> ediItems;
+            List<IEdiItem> hl7Items;
             using (var hl7Reader = new Hl7Reader(hl7Stream, TypeFactory))
-                ediItems = hl7Reader.ReadToEnd().ToList();
+                hl7Items = hl7Reader.ReadToEnd().ToList();
 
             //  3.  Pull the required transactions
-            var dispenses = ediItems.OfType<TSRDSO13>();
+            var dispenses = hl7Items.OfType<TSRDSO13>();
         }
 
         public static TypeInfo TypeFactory(FHS fhs, BHS bhs, MSH msh)

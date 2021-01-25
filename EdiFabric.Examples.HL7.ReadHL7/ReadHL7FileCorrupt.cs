@@ -21,21 +21,21 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\CorruptMsh.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\CorruptMsh.txt");
 
             //  Set the continue on error flag to true
-            List<IEdiItem> ediItems;
-            using (var hl7Reader = new Hl7Reader(ediStream, "EdiFabric.Templates.Hl7", new Hl7ReaderSettings() { ContinueOnError = true }))
-                ediItems = hl7Reader.ReadToEnd().ToList();
+            List<IEdiItem> hl7Items;
+            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7", new Hl7ReaderSettings() { ContinueOnError = true }))
+                hl7Items = hl7Reader.ReadToEnd().ToList();
 
-            var readerErrors = ediItems.OfType<ReaderErrorContext>();
+            var readerErrors = hl7Items.OfType<ReaderErrorContext>();
             if (readerErrors.Any())
             {
                 //  The stream is corrupt
                 Debug.WriteLine(readerErrors.First().Exception.Message);
             }
 
-            var dispenses = ediItems.OfType<TSRDSO13>();
+            var dispenses = hl7Items.OfType<TSRDSO13>();
             foreach (var dispense in dispenses)
             {
                 //  All valid dispenses were extracted

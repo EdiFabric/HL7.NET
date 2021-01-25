@@ -6,10 +6,10 @@ using System.Reflection;
 
 namespace EdiFabric.Examples.HL7.WriteHL7
 {
-    class WriteHL7GroupBatch
+    class WriteHL7FHSBatch
     {
         /// <summary>
-        /// Batch multiple transactions under multiple functional groups in the same HL7 stream
+        /// Batch multiple interchanges in the same HL7 stream
         /// </summary>
         public static void Run()
         {
@@ -21,16 +21,14 @@ namespace EdiFabric.Examples.HL7.WriteHL7
             {
                 using (var writer = new Hl7Writer(stream))
                 {
-                    writer.Write(SegmentBuilders.BuildFhs("LAB1", "LAB", "DEST2", "DEST", "TESTFILE", "1234"));
-
-                    //  1.  Write the first group               
+                    //  1.  Write the first interchange 
+                    writer.Write(SegmentBuilders.BuildFhs("LAB1", "LAB", "DEST2", "DEST", "TESTFILE", "1"));
                     writer.Write(SegmentBuilders.BuildBhs("LAB1", "LAB", "DEST2", "DEST", "TESTBATCH", "1"));
-                    //  Write the transactions...
                     writer.Write(SegmentBuilders.BuildDispense("LAB1", "LAB", "DEST2", "DEST", "1"));
 
-                    //  2.  Write the second group
-                    writer.Write(SegmentBuilders.BuildBhs("LAB1", "LAB", "DEST2", "DEST", "TESTBATCH", "2"));
-                    //  Write the transactions...
+                    //  2.  Write the second interchange
+                    writer.Write(SegmentBuilders.BuildFhs("LAB1", "LAB", "DEST2", "DEST", "TESTFILE", "2"));
+                    writer.Write(SegmentBuilders.BuildBhs("LAB1", "LAB", "DEST2", "DEST", "TESTBATCH", "1"));
                     writer.Write(SegmentBuilders.BuildDispense("LAB1", "LAB", "DEST2", "DEST", "1"));
                 }
 

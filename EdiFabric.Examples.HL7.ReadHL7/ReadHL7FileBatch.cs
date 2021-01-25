@@ -19,10 +19,10 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MixedTransactions.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MixedTransactions.txt");
 
             //  2.  Read multiple transactions batched up in the same interchange
-            using (var hl7Reader = new Hl7Reader(ediStream, "EdiFabric.Templates.Hl7"))
+            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
             {
                 while (hl7Reader.Read())
                 {

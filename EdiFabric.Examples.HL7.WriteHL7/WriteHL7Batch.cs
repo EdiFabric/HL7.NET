@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace EdiFabric.Examples.HL7.WriteHL7
 {
-    class WriteHL7TransactionBatch
+    class WriteHL7Batch
     {
         /// <summary>
         /// Batch multiple transactions in the same envelope\HL7 stream.

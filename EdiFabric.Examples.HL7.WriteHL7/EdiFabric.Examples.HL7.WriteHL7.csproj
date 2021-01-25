@@ -50,12 +50,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WriteHL7GroupBatch.cs" />
-    <Compile Include="WriteHL7InterchangeBatch.cs" />
+    <Compile Include="WriteHL7BHSBatch.cs" />
+    <Compile Include="WriteHL7FHSBatch.cs" />
     <Compile Include="WriteHL7ToFile.cs" />
     <Compile Include="WriteHL7ToStream.cs" />
     <Compile Include="WriteHL7ToStreamAsync.cs" />
-    <Compile Include="WriteHL7TransactionBatch.cs" />
+    <Compile Include="WriteHL7Batch.cs" />
     <Compile Include="WriteHL7WithCustomDelimiters.cs" />
     <Compile Include="WriteHL7WithEmptyDataElements.cs" />
     <Compile Include="WriteHL7WithNewLines.cs" />

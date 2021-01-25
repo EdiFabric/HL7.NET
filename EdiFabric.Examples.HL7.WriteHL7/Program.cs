@@ -20,10 +20,10 @@
             //WriteHL7WithNewLines.Run();
 
             //  Write batches
-            WriteHL7TransactionBatch.Run1();
-            WriteHL7TransactionBatch.Run2();
-            WriteHL7GroupBatch.Run();
-            WriteHL7InterchangeBatch.Run();
+            WriteHL7Batch.Run1();
+            WriteHL7Batch.Run2();
+            WriteHL7BHSBatch.Run();
+            WriteHL7FHSBatch.Run();
 
             //  Retain trailing data element delimiters for empty data elements
             WriteHL7WithEmptyDataElements.Run();

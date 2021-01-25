@@ -9,32 +9,27 @@ using System.Reflection;
 
 namespace EdiFabric.Examples.HL7.ReadHL7
 {
-    class ReadHL7FileToEndAsync
+    class ReadHL7FileWithDSC
     {
         /// <summary>
-        /// Reads the HL7 stream from start to end.
-        /// This method loads the file into memory. Do not use for large files. 
-        /// The sample file contains two purchase orders - a valid one and an invalid one.
+        /// Reads the HL7 stream with DSC segment
         /// </summary>
-        public static async void Run()
+        public static void Run()
         {
             Debug.WriteLine("******************************");
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispenses.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\ObservationDSC.txt");
 
             //  2.  Read all the contents
             List<IEdiItem> hl7Items;
             using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
-            {
-                var items = await hl7Reader.ReadToEndAsync();
-                hl7Items = items.ToList();
-            }
+                hl7Items = hl7Reader.ReadToEnd().ToList();
 
             //  3.  Pull the required transactions
-            var dispenses = hl7Items.OfType<TSRDSO13>();
+            var observations = hl7Items.OfType<TSORUR01> ();
         }
     }
 }
