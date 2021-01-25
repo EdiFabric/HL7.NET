@@ -20,10 +20,10 @@ The serial key is included in the file serial.key in folder edifabric-trial. Ens
 Open the file and ensure that the serialKeyPath is correct. If the serial key is invalid or the file is missing, contact us at https://support.edifabric.com/hc/en-us/requests/new for assistance.
 
 5. Getting started
-To get started, set project EdiFabric.Examples.HL7.Demo as the startup project, open Program.cs and follow the instructions there. This project allows you to quickly translate your own EDI files.
+To get started, set project EdiFabric.Examples.HL7.Demo as the startup project, open Program.cs and follow the instructions there. This project allows you to quickly translate your own HL7 files.
 
 6. Examples by feature
-Explore the different features of EdiFabric, such as translating from EDI file (ReadEDI), generating EDI file (WriteEDI), validating EDI transactions (ValidateEDI), 
+Explore the different features of EdiFabric, such as translating from HL7 file (ReadHL7), generating HL7 file (WriteHL7), validating HL7 transactions (ValidateHL7), 
 import/export from/to JSON , XML, CSV.
 
 7. Validation
