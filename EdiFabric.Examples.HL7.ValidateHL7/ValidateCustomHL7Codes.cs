@@ -1,5 +1,4 @@
 ﻿using EdiFabric.Core.Annotations.Edi;
-using EdiFabric.Core.ErrorCodes;
 using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework.Readers;
