@@ -51,16 +51,6 @@ The following templates are available out-of-the-box:
 
 [X12](https://support.edifabric.com/hc/en-us/articles/360000360572-X12-2040-to-4010)
 
-[HIPAA](https://support.edifabric.com/hc/en-us/articles/360000372751-HIPAA-270-271-276-277-278-820-834-835-837-999)
-
-For an interactive view of all templates go to EdiNation's EDI Webpad (no registration is required):
-
-[X12](https://www.edination.com/edi-models-x12.html)
-
-[HIPAA](https://www.edination.com/edi-models-hipaa.html)
-
-[IAIABC](https://www.edination.com/edi-models-iaiabc.html)
-
 ## 9. Trial use
 The trial assemblies are valid for 14 days and are subject to EdiFabric's license terms available at https://www.edifabric.com/files/eula.pdf. Upon expiry, the trial packages will begin throwing exceptions.   
 To continue using the trial and the examples, you'll need to either request a trial extension or replace the trial packages, together with all references to the trial packages, with the full version of EdiFabric.  
