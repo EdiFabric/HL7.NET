@@ -33,7 +33,7 @@ All templates in EdiFabric.Templates.HL7 can be used for validation.
 EdiFabric supports all HL7 versions and message types. We have an extensive library of EDI templates, however, if you can't find a particular transaction, please let us know. 
 The following templates are available out-of-the-box:
 
-https://support.edifabric.com/hc/en-us/articles/360000360572-X12-2040-to-4010
+https://support.edifabric.com/hc/en-us/articles/360017128357-HL7-version-2-6
 
 9. Trial use
 The trial assemblies are valid for 14 days and are subject to EdiFabric's license terms available at https://www.edifabric.com/files/eula.pdf. Upon expiry, the trial packages will begin throwing exceptions. 
