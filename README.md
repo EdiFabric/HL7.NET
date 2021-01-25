@@ -46,10 +46,10 @@ import/export from/to JSON , XML, CSV.
 All templates in EdiFabric.Templates.HL7 can be used for validation.  
 
 ## 8. EDI Templates
-EdiFabric supports all X12/HIPAA versions and message types. We have an extensive library of EDI templates, however, if you can't find a particular transaction, please let us know.   
+EdiFabric supports all HL7 versions and message types. We have an extensive library of EDI templates, however, if you can't find a particular transaction, please let us know.   
 The following templates are available out-of-the-box:  
 
-[X12](https://support.edifabric.com/hc/en-us/articles/360000360572-X12-2040-to-4010)
+[HL7](https://support.edifabric.com/hc/en-us/articles/360000360572-X12-2040-to-4010)
 
 ## 9. Trial use
 The trial assemblies are valid for 14 days and are subject to EdiFabric's license terms available at https://www.edifabric.com/files/eula.pdf. Upon expiry, the trial packages will begin throwing exceptions.   
