@@ -11,13 +11,13 @@ The best option to get the gist of what EdiFabric is, and can do, is to play aro
 The examples are organized into different projects in two logical categories: by product feature and by message type.    
 
 ```C#
-var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\MedicalRecord.txt");
+var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispenses_RDSO13.txt");
 
 List<IEdiItem> hl7Items;
 using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
     hl7Items = hl7Reader.ReadToEnd().ToList();
 
-var transactions = hl7Items.OfType<TS837P>();
+var transactions = hl7Items.OfType<TSRDSO13>();
 ```  
 
 ## 2. Requirements
