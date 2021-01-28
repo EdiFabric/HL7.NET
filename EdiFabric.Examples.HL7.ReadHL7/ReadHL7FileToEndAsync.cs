@@ -12,9 +12,9 @@ namespace EdiFabric.Examples.HL7.ReadHL7
     class ReadHL7FileToEndAsync
     {
         /// <summary>
-        /// Reads the HL7 stream from start to end.
+        /// Reads the HL7 stream from start to end async.
         /// This method loads the file into memory. Do not use for large files. 
-        /// The sample file contains two purchase orders - a valid one and an invalid one.
+        /// The sample file contains two dispenses - a valid one and an invalid one.
         /// </summary>
         public static async void Run()
         {

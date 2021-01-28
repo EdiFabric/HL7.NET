@@ -14,7 +14,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
         /// <summary>
         /// Reads the HL7 stream from start to end.
         /// This method loads the file into memory. Do not use for large files. 
-        /// The sample file contains two purchase orders - a valid one and an invalid one.
+        /// The sample file contains two dispenses - a valid one and an invalid one.
         /// </summary>
         public static void Run()
         {
