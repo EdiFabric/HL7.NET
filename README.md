@@ -1,4 +1,4 @@
-# EdiFabric Examples for HL7
+# EdiFabric C# .NET Examples for HL7
 
 ## 1. Overview
 EdiFabric is a software development kit for .NET Framework and .NET Core, which makes it straightforward to parse, generate, validate, acknowledge, split, customize, or in other words, to programmatically manipulate EDI files. It is written in C# and is distributed as a set of NuGet packages and C# files.  
@@ -11,13 +11,13 @@ The best option to get the gist of what EdiFabric is, and can do, is to play aro
 The examples are organized into different projects in two logical categories: by product feature and by message type.    
 
 ```C#
-var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\MedicalRecord.txt");
+var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispenses_RDSO13.txt");
 
 List<IEdiItem> hl7Items;
 using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
     hl7Items = hl7Reader.ReadToEnd().ToList();
 
-var transactions = hl7Items.OfType<TS837P>();
+var transactions = hl7Items.OfType<TSRDSO13>();
 ```  
 
 ## 2. Requirements
@@ -49,7 +49,7 @@ All templates in EdiFabric.Templates.HL7 can be used for validation.
 EdiFabric supports all HL7 versions and message types. We have an extensive library of EDI templates, however, if you can't find a particular transaction, please let us know.   
 The following templates are available out-of-the-box:  
 
-[HL7](https://support.edifabric.com/hc/en-us/articles/360000360572-X12-2040-to-4010)
+[HL7](https://support.edifabric.com/hc/en-us/articles/360017128357-HL7-version-2-6)
 
 ## 9. Trial use
 The trial assemblies are valid for 14 days and are subject to EdiFabric's license terms available at https://www.edifabric.com/files/eula.pdf. Upon expiry, the trial packages will begin throwing exceptions.   
