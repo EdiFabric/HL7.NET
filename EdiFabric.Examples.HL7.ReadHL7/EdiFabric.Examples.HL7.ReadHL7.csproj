@@ -56,6 +56,7 @@
     <Compile Include="ReadHL7FileSplitting.cs" />
     <Compile Include="ReadHL7FileStreaming.cs" />
     <Compile Include="ReadHL7FileStreamingAsync.cs" />
+    <Compile Include="ReadHL7FileWithCustomFHSorBHS.cs" />
     <Compile Include="ReadHL7FileWithEscapedDelimiters.cs" />
     <Compile Include="ReadHL7FileToEnd.cs" />
     <Compile Include="ReadHL7FileToEndAsync.cs" />

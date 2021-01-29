@@ -46,6 +46,9 @@
 
             //  Read file with escaped delimiters
             ReadHL7FileWithEscapedDelimiters.Run();
+
+            //  Read with custom FHS or BHS
+            ReadHL7FileWithCustomFHSorBHS.Run();
         }
     }
 }
