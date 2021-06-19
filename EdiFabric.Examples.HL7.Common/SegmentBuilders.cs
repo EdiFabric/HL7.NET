@@ -15,23 +15,23 @@ namespace EdiFabric.Examples.HL7.Common
         {
             var result = new FHS();
 
-            result.FileSendingApplication_02 = new FileSendingApplication();
-            result.FileSendingApplication_02.NamespaceID_01 = senderId;
+            result.FileSendingApplication_03 = new FileSendingApplication();
+            result.FileSendingApplication_03.NamespaceID_01 = senderId;
 
-            result.FileSendingFacility_03 = new FileSendingFacility();
-            result.FileSendingFacility_03.NamespaceID_01 = senderFacility;
+            result.FileSendingFacility_04 = new FileSendingFacility();
+            result.FileSendingFacility_04.NamespaceID_01 = senderFacility;
 
-            result.FileReceivingApplication_04 = new FileReceivingApplication();
-            result.FileReceivingApplication_04.NamespaceID_01 = receiverId;
+            result.FileReceivingApplication_05 = new FileReceivingApplication();
+            result.FileReceivingApplication_05.NamespaceID_01 = receiverId;
 
-            result.FileReceivingFacility_05 = new FileReceivingFacility();
-            result.FileReceivingFacility_05.NamespaceID_01 = receiverFacility;
+            result.FileReceivingFacility_06 = new FileReceivingFacility();
+            result.FileReceivingFacility_06.NamespaceID_01 = receiverFacility;
 
-            result.FileCreationDateTime_06 = DateTime.Now.Date.ToString("yyyyMMdd") + DateTime.Now.TimeOfDay.ToString("hhmmss");
+            result.FileCreationDateTime_07 = DateTime.Now.Date.ToString("yyyyMMdd") + DateTime.Now.TimeOfDay.ToString("hhmmss");
 
-            result.FileHeaderComment_9 = comment;
+            result.FileHeaderComment_10 = comment;
 
-            result.FileControlID_10 = controlNr;
+            result.FileControlID_11 = controlNr;
 
             return result;
         }
@@ -44,23 +44,23 @@ namespace EdiFabric.Examples.HL7.Common
         {
             var result = new BHS();
 
-            result.BatchSendingApplication_02 = new BatchSendingApplication();
-            result.BatchSendingApplication_02.NamespaceID_01 = senderId;
+            result.BatchSendingApplication_03 = new BatchSendingApplication();
+            result.BatchSendingApplication_03.NamespaceID_01 = senderId;
 
-            result.BatchSendingFacility_03 = new BatchSendingFacility();
-            result.BatchSendingFacility_03.NamespaceID_01 = senderFacility;
+            result.BatchSendingFacility_04 = new BatchSendingFacility();
+            result.BatchSendingFacility_04.NamespaceID_01 = senderFacility;
 
-            result.BatchReceivingApplication_04 = new BatchReceivingApplication();
-            result.BatchReceivingApplication_04.NamespaceID_01 = receiverId;
+            result.BatchReceivingApplication_05 = new BatchReceivingApplication();
+            result.BatchReceivingApplication_05.NamespaceID_01 = receiverId;
 
-            result.BatchReceivingFacility_05 = new BatchReceivingFacility();
-            result.BatchReceivingFacility_05.NamespaceID_01 = receiverFacility;
+            result.BatchReceivingFacility_06 = new BatchReceivingFacility();
+            result.BatchReceivingFacility_06.NamespaceID_01 = receiverFacility;
 
-            result.BatchCreationDateTime_06 = DateTime.Now.Date.ToString("yyyyMMdd") + DateTime.Now.TimeOfDay.ToString("hhmmss");
+            result.BatchCreationDateTime_07 = DateTime.Now.Date.ToString("yyyyMMdd") + DateTime.Now.TimeOfDay.ToString("hhmmss");
 
-            result.BatchComment_9 = comment;
+            result.BatchComment_10 = comment;
 
-            result.BatchControlID_10 = controlNr;
+            result.BatchControlID_11 = controlNr;
 
             return result;
         }
@@ -72,32 +72,32 @@ namespace EdiFabric.Examples.HL7.Common
             //  MSH segment
             result.MSH = new MSH();
 
-            result.MSH.SendingApplication_02 = new SendingApplication();
-            result.MSH.SendingApplication_02.NamespaceID_01 = senderId;
+            result.MSH.SendingApplication_03 = new SendingApplication();
+            result.MSH.SendingApplication_03.NamespaceID_01 = senderId;
 
-            result.MSH.SendingFacility_03 = new SendingFacility();
-            result.MSH.SendingFacility_03.NamespaceID_01 = senderFacility;
+            result.MSH.SendingFacility_04 = new SendingFacility();
+            result.MSH.SendingFacility_04.NamespaceID_01 = senderFacility;
 
-            result.MSH.ReceivingApplication_04 = new ReceivingApplication();
-            result.MSH.ReceivingApplication_04.NamespaceID_01 = receiverId;
+            result.MSH.ReceivingApplication_05 = new ReceivingApplication();
+            result.MSH.ReceivingApplication_05.NamespaceID_01 = receiverId;
 
-            result.MSH.ReceivingFacility_05 = new ReceivingFacility();
-            result.MSH.ReceivingFacility_05.NamespaceID_01 = receiverFacility;
+            result.MSH.ReceivingFacility_06 = new ReceivingFacility();
+            result.MSH.ReceivingFacility_06.NamespaceID_01 = receiverFacility;
 
-            result.MSH.DateTimeOfMessage_06 = DateTime.Now.Date.ToString("yyyyMMdd") + DateTime.Now.TimeOfDay.ToString("hhmm");
+            result.MSH.DateTimeOfMessage_07 = DateTime.Now.Date.ToString("yyyyMMdd") + DateTime.Now.TimeOfDay.ToString("hhmm");
 
-            result.MSH.MessageType_08 = new MessageType();
-            result.MSH.MessageType_08.MessageCode_01 = "RDS";
-            result.MSH.MessageType_08.TriggerEvent_02 = "O13";
-            result.MSH.MessageType_08.MessageStructure_03 = "RDS_O13";
+            result.MSH.MessageType_09 = new MessageType();
+            result.MSH.MessageType_09.MessageCode_01 = "RDS";
+            result.MSH.MessageType_09.TriggerEvent_02 = "O13";
+            result.MSH.MessageType_09.MessageStructure_03 = "RDS_O13";
 
-            result.MSH.MessageControlID_9 = controlNr;
+            result.MSH.MessageControlID_10 = controlNr;
 
-            result.MSH.ProcessingID_10 = new ProcessingID();
-            result.MSH.ProcessingID_10.ProcessingID_01 = "P";
+            result.MSH.ProcessingID_11 = new ProcessingID();
+            result.MSH.ProcessingID_11.ProcessingID_01 = "P";
 
-            result.MSH.VersionID_11 = new VersionID();
-            result.MSH.VersionID_11.VersionID_01 = "2.6";
+            result.MSH.VersionID_12 = new VersionID();
+            result.MSH.VersionID_12.VersionID_01 = "2.6";
 
             //  PID LOOP
             result.LoopPID = new Loop_PID_TSRDSO13();

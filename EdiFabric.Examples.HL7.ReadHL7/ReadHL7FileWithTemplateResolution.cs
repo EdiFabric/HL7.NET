@@ -66,11 +66,11 @@ namespace EdiFabric.Examples.HL7.ReadHL7
 
         public static TypeInfo TypeFactory(FHS fhs, BHS bhs, MSH msh)
         {
-            if (msh.MessageType_08.MessageCode_01 == "RDS" && msh.MessageType_08.TriggerEvent_02 == "O13")
+            if (msh.MessageType_09.MessageCode_01 == "RDS" && msh.MessageType_09.TriggerEvent_02 == "O13")
                 return typeof(TSRDSO13).GetTypeInfo();            
 
             throw new Exception(string.Format("Transaction {0} for trigger {1} is not supported.",
-                msh.MessageType_08.MessageCode_01, msh.MessageType_08.TriggerEvent_02));
+                msh.MessageType_09.MessageCode_01, msh.MessageType_09.TriggerEvent_02));
         }
     }
 }

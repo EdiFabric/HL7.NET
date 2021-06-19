@@ -29,7 +29,7 @@ namespace EdiFabric.Examples.HL7.ValidateHL7
                         //  Validate 
                         var fhsErrors = fhs.Validate();
                         //  Pull the sending application from FHS
-                        var senderId = fhs.FileSendingApplication_02.NamespaceID_01;
+                        var senderId = fhs.FileSendingApplication_03.NamespaceID_01;
                         Debug.WriteLine("Sending application:");
                         Debug.WriteLine(senderId);
                     }
@@ -40,7 +40,7 @@ namespace EdiFabric.Examples.HL7.ValidateHL7
                         //  Validate 
                         var bhsErrors = bhs.Validate();
                         //  Pull the sending application from BHS
-                        var senderId = bhs.BatchSendingApplication_02.NamespaceID_01;
+                        var senderId = bhs.BatchSendingApplication_03.NamespaceID_01;
                         Debug.WriteLine("Sending application:");
                         Debug.WriteLine(senderId);
                     }
