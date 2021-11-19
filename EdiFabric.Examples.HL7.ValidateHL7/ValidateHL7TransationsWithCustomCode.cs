@@ -55,7 +55,7 @@ namespace EdiFabric.Examples.HL7.ValidateHL7
     [AttributeUsage(AttributeTargets.Property)]
     public class OBXLoopValidationAttribute : ValidationAttribute
     {
-        public OBXLoopValidationAttribute() : base(10)
+        public OBXLoopValidationAttribute() : base(10, ValidationLevel.InterSegment_SNIP4)
         {
         }
 
