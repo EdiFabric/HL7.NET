@@ -58,6 +58,7 @@
     <Compile Include="WriteHL7Batch.cs" />
     <Compile Include="WriteHL7WithCustomDelimiters.cs" />
     <Compile Include="WriteHL7WithEmptyDataElements.cs" />
+    <Compile Include="WriteHL7WithObfuscation.cs" />
     <Compile Include="WriteHL7WithNewLines.cs" />
   </ItemGroup>
   <ItemGroup>

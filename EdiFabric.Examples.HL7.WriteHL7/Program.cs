@@ -27,6 +27,9 @@
 
             //  Retain trailing data element delimiters for empty data elements
             WriteHL7WithEmptyDataElements.Run();
+
+            //  Write with obfuscation
+            WriteHL7WithObfuscation.Run();
         }
     }
 }
