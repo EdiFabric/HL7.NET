@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{400B6A30-0001-4555-BBAC-20B8F748ADCA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>EdiFabric.Examples.HL7.ValidateHL7</RootNamespace>
-    <AssemblyName>EdiFabric.Examples.HL7.ValidateHL7</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectGuid>{04AB8D0E-FA7A-4256-A087-0F97DE9DB1E5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EdiFabric.Examples.HL7.Common</RootNamespace>
+    <AssemblyName>EdiFabric.Examples.HL7.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,12 +33,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric, Version=10.4.3.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\..\edifabric-trial\net45\EdiFabric.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\edifabric\net48\EdiFabric.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Templates.Hl7, Version=2.6.7.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\edifabric-trial\net45\EdiFabric.Templates.Hl7.dll</HintPath>
+      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Hl7.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,23 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="SegmentBuilders.cs" />
+    <Compile Include="SerialKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidateCustomHL7Codes.cs" />
-    <Compile Include="ValidateDataElementTypes.cs" />
-    <Compile Include="ValidateFHSorBHS.cs" />
-    <Compile Include="ValidateHL7Transations.cs" />
-    <Compile Include="ValidateHL7TransationsAsync.cs" />
-    <Compile Include="ValidateHL7TransationsWithCustomCode.cs" />
+    <Compile Include="StreamExtensions.cs" />
+    <Compile Include="XmlExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EdiFabric.Examples.HL7.Common\EdiFabric.Examples.HL7.Common.csproj">
-      <Project>{04ab8d0e-fa7a-4256-a087-0f97de9db1e5}</Project>
-      <Name>EdiFabric.Examples.HL7.Common</Name>
-    </ProjectReference>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

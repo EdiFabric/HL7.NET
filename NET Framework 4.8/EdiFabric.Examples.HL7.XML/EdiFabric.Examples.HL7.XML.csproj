@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D6C6BE78-FDD2-43E8-AD96-550031CFA0E1}</ProjectGuid>
+    <ProjectGuid>{DB19F69A-4252-43BF-A1F7-B7A9549EC65F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EdiFabric.Examples.HL7.Demo</RootNamespace>
-    <AssemblyName>EdiFabric.Examples.HL7.Demo</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>EdiFabric.Examples.HL7.XML</RootNamespace>
+    <AssemblyName>EdiFabric.Examples.HL7.XML</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,12 +34,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric, Version=10.4.3.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\..\edifabric-trial\net45\EdiFabric.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\edifabric\net48\EdiFabric.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Templates.Hl7, Version=2.6.7.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\edifabric-trial\net45\EdiFabric.Templates.Hl7.dll</HintPath>
+      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Hl7.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,8 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeserializeFromXml.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerializeToXml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

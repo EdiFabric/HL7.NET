@@ -3,18 +3,19 @@
 ################################################################################
 
 /.vs
-/EdiFabric.Examples.HL7.Common/bin/Debug
-/EdiFabric.Examples.HL7.Common/obj/Debug
-/EdiFabric.Examples.HL7.Demo/bin/Debug
-/EdiFabric.Examples.HL7.Demo/obj/Debug
-/packages
-/EdiFabric.Examples.HL7.JSON/bin/Debug
-/EdiFabric.Examples.HL7.JSON/obj/Debug
-/EdiFabric.Examples.HL7.ReadHL7/bin/Debug
-/EdiFabric.Examples.HL7.ReadHL7/obj/Debug
-/EdiFabric.Examples.HL7.ValidateHL7/bin/Debug
-/EdiFabric.Examples.HL7.ValidateHL7/obj/Debug
-/EdiFabric.Examples.HL7.WriteHL7/bin/Debug
-/EdiFabric.Examples.HL7.WriteHL7/obj/Debug
-/EdiFabric.Examples.HL7.XML/bin/Debug
-/EdiFabric.Examples.HL7.XML/obj/Debug
+/NET Framework 4.8/.vs/EdiFabric.Examples.HL7
+/NET Framework 4.8/EdiFabric.Examples.HL7.Common/bin
+/NET Framework 4.8/EdiFabric.Examples.HL7.Common/obj
+/NET Framework 4.8/EdiFabric.Examples.HL7.Demo/bin
+/NET Framework 4.8/EdiFabric.Examples.HL7.Demo/obj
+/NET Framework 4.8/EdiFabric.Examples.HL7.JSON/bin
+/NET Framework 4.8/EdiFabric.Examples.HL7.JSON/obj
+/NET Framework 4.8/EdiFabric.Examples.HL7.ReadHL7/bin
+/NET Framework 4.8/EdiFabric.Examples.HL7.ReadHL7/obj
+/NET Framework 4.8/EdiFabric.Examples.HL7.ValidateHL7/bin
+/NET Framework 4.8/EdiFabric.Examples.HL7.ValidateHL7/obj
+/NET Framework 4.8/EdiFabric.Examples.HL7.WriteHL7/bin
+/NET Framework 4.8/EdiFabric.Examples.HL7.WriteHL7/obj
+/NET Framework 4.8/EdiFabric.Examples.HL7.XML/bin
+/NET Framework 4.8/EdiFabric.Examples.HL7.XML/obj
+/NET Framework 4.8/packages/Newtonsoft.Json.12.0.3

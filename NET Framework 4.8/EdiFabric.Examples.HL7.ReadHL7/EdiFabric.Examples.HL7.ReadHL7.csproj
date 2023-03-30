@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{04AB8D0E-FA7A-4256-A087-0F97DE9DB1E5}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EdiFabric.Examples.HL7.Common</RootNamespace>
-    <AssemblyName>EdiFabric.Examples.HL7.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectGuid>{C7F8C62B-C859-4CF2-AC83-6041F78D5DCB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EdiFabric.Examples.HL7.ReadHL7</RootNamespace>
+    <AssemblyName>EdiFabric.Examples.HL7.ReadHL7</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,12 +34,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric, Version=10.4.3.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\..\edifabric-trial\net45\EdiFabric.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\edifabric\net48\EdiFabric.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Templates.Hl7, Version=2.6.7.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\edifabric-trial\net45\EdiFabric.Templates.Hl7.dll</HintPath>
+      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Hl7.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,14 +52,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SegmentBuilders.cs" />
-    <Compile Include="SerialKey.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StreamExtensions.cs" />
-    <Compile Include="XmlExtensions.cs" />
+    <Compile Include="ReadHL7FileBatch.cs" />
+    <Compile Include="ReadHL7FileCorrupt.cs" />
+    <Compile Include="ReadHL7FileSplitting.cs" />
+    <Compile Include="ReadHL7FileStreaming.cs" />
+    <Compile Include="ReadHL7FileStreamingAsync.cs" />
+    <Compile Include="ReadHL7FileWithCustomFHSorBHS.cs" />
+    <Compile Include="ReadHL7FileWithEscapedDelimiters.cs" />
+    <Compile Include="ReadHL7FileToEnd.cs" />
+    <Compile Include="ReadHL7FileToEndAsync.cs" />
+    <Compile Include="ReadHL7FileWithADDandDSC.cs" />
+    <Compile Include="ReadHL7FileWithDSC.cs" />
+    <Compile Include="ReadHL7FileWithQPD.cs" />
+    <Compile Include="ReadHL7FileWithADD.cs" />
+    <Compile Include="ReadHL7FileWithInheritedTemplate.cs" />
+    <Compile Include="ReadHL7FileWithTemplateResolution.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Examples.HL7.Common\EdiFabric.Examples.HL7.Common.csproj">
+      <Project>{04ab8d0e-fa7a-4256-a087-0f97de9db1e5}</Project>
+      <Name>EdiFabric.Examples.HL7.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{08B66BCF-6028-4B2B-8FF0-0F10D335201F}</ProjectGuid>
+    <ProjectGuid>{F10A17A6-6D85-4DDF-8627-B074416BE44B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EdiFabric.Examples.HL7.WriteHL7</RootNamespace>
-    <AssemblyName>EdiFabric.Examples.HL7.WriteHL7</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>EdiFabric.Examples.HL7.JSON</RootNamespace>
+    <AssemblyName>EdiFabric.Examples.HL7.JSON</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,12 +34,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric, Version=10.4.3.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\..\edifabric-trial\net45\EdiFabric.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\edifabric\net48\EdiFabric.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Templates.Hl7, Version=2.6.7.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\edifabric-trial\net45\EdiFabric.Templates.Hl7.dll</HintPath>
+      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Hl7.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,21 +54,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeserializeFromJson.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WriteHL7BHSBatch.cs" />
-    <Compile Include="WriteHL7FHSBatch.cs" />
-    <Compile Include="WriteHL7ToFile.cs" />
-    <Compile Include="WriteHL7ToStream.cs" />
-    <Compile Include="WriteHL7ToStreamAsync.cs" />
-    <Compile Include="WriteHL7Batch.cs" />
-    <Compile Include="WriteHL7WithCustomDelimiters.cs" />
-    <Compile Include="WriteHL7WithEmptyDataElements.cs" />
-    <Compile Include="WriteHL7WithObfuscation.cs" />
-    <Compile Include="WriteHL7WithNewLines.cs" />
+    <Compile Include="SerializeToJson.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EdiFabric.Examples.HL7.Common\EdiFabric.Examples.HL7.Common.csproj">
