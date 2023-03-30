@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Getting started", "_Getting started", "{A0091ADC-E5CC-4954-9C92-0B1624B2E9C4}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.txt = ..\README.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples by feature", "Examples by feature", "{B032F8FB-5AB6-4EC7-AC52-8223A47E874A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample files", "Sample files", "{ED18A88F-7381-4E4E-A084-F5EB6EF06A2C}"
+	ProjectSection(SolutionItems) = preProject
+		..\Files\CorruptMsh.txt = ..\Files\CorruptMsh.txt
+		..\Files\DispenseEscaped.txt = ..\Files\DispenseEscaped.txt
+		..\Files\MedicalRecord.txt = ..\Files\MedicalRecord.txt
+		..\Files\MixedTransactions.txt = ..\Files\MixedTransactions.txt
+		..\Files\ObservationADD.txt = ..\Files\ObservationADD.txt
+		..\Files\ObservationADD_DSC.txt = ..\Files\ObservationADD_DSC.txt
+		..\Files\ObservationDSC.txt = ..\Files\ObservationDSC.txt
+		..\Files\PharmacyTreatmentDispense.json = ..\Files\PharmacyTreatmentDispense.json
+		..\Files\PharmacyTreatmentDispense.txt = ..\Files\PharmacyTreatmentDispense.txt
+		..\Files\PharmacyTreatmentDispense.xml = ..\Files\PharmacyTreatmentDispense.xml
+		..\Files\PharmacyTreatmentDispense2.xml = ..\Files\PharmacyTreatmentDispense2.xml
+		..\Files\PharmacyTreatmentDispenseCustom.txt = ..\Files\PharmacyTreatmentDispenseCustom.txt
+		..\Files\PharmacyTreatmentDispenses.txt = ..\Files\PharmacyTreatmentDispenses.txt
+		..\Files\Query.txt = ..\Files\Query.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.Common", "EdiFabric.Examples.HL7.Common\EdiFabric.Examples.HL7.Common.csproj", "{92A0383E-1F66-462B-8BD8-CBD8BC4FE3DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.Demo", "EdiFabric.Examples.HL7.Demo\EdiFabric.Examples.HL7.Demo.csproj", "{1BD2C0F6-53F5-4054-AE66-EA1EE9A23861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.JSON", "EdiFabric.Examples.HL7.JSON\EdiFabric.Examples.HL7.JSON.csproj", "{295D7DB0-F463-458E-99BC-788DDF306D47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.ReadHL7", "EdiFabric.Examples.HL7.ReadHL7\EdiFabric.Examples.HL7.ReadHL7.csproj", "{39BABA09-30B1-490F-8ACA-1D3024DD530D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.ValidateHL7", "EdiFabric.Examples.HL7.ValidateHL7\EdiFabric.Examples.HL7.ValidateHL7.csproj", "{A990CC1D-900C-4CC3-A339-A4FBCE5CABCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.WriteHL7", "EdiFabric.Examples.HL7.WriteHL7\EdiFabric.Examples.HL7.WriteHL7.csproj", "{2F02C5EF-905F-41E9-8BA5-651E295521B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.XML", "EdiFabric.Examples.HL7.XML\EdiFabric.Examples.HL7.XML.csproj", "{DD75CCB9-E262-4808-A8B8-4A90FF5FFF8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92A0383E-1F66-462B-8BD8-CBD8BC4FE3DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A0383E-1F66-462B-8BD8-CBD8BC4FE3DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A0383E-1F66-462B-8BD8-CBD8BC4FE3DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A0383E-1F66-462B-8BD8-CBD8BC4FE3DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD2C0F6-53F5-4054-AE66-EA1EE9A23861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD2C0F6-53F5-4054-AE66-EA1EE9A23861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD2C0F6-53F5-4054-AE66-EA1EE9A23861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD2C0F6-53F5-4054-AE66-EA1EE9A23861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295D7DB0-F463-458E-99BC-788DDF306D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295D7DB0-F463-458E-99BC-788DDF306D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295D7DB0-F463-458E-99BC-788DDF306D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295D7DB0-F463-458E-99BC-788DDF306D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39BABA09-30B1-490F-8ACA-1D3024DD530D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39BABA09-30B1-490F-8ACA-1D3024DD530D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39BABA09-30B1-490F-8ACA-1D3024DD530D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39BABA09-30B1-490F-8ACA-1D3024DD530D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A990CC1D-900C-4CC3-A339-A4FBCE5CABCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A990CC1D-900C-4CC3-A339-A4FBCE5CABCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A990CC1D-900C-4CC3-A339-A4FBCE5CABCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A990CC1D-900C-4CC3-A339-A4FBCE5CABCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F02C5EF-905F-41E9-8BA5-651E295521B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F02C5EF-905F-41E9-8BA5-651E295521B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F02C5EF-905F-41E9-8BA5-651E295521B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F02C5EF-905F-41E9-8BA5-651E295521B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD75CCB9-E262-4808-A8B8-4A90FF5FFF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD75CCB9-E262-4808-A8B8-4A90FF5FFF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD75CCB9-E262-4808-A8B8-4A90FF5FFF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD75CCB9-E262-4808-A8B8-4A90FF5FFF8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{295D7DB0-F463-458E-99BC-788DDF306D47} = {B032F8FB-5AB6-4EC7-AC52-8223A47E874A}
+		{39BABA09-30B1-490F-8ACA-1D3024DD530D} = {B032F8FB-5AB6-4EC7-AC52-8223A47E874A}
+		{A990CC1D-900C-4CC3-A339-A4FBCE5CABCC} = {B032F8FB-5AB6-4EC7-AC52-8223A47E874A}
+		{2F02C5EF-905F-41E9-8BA5-651E295521B4} = {B032F8FB-5AB6-4EC7-AC52-8223A47E874A}
+		{DD75CCB9-E262-4808-A8B8-4A90FF5FFF8C} = {B032F8FB-5AB6-4EC7-AC52-8223A47E874A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3B8E90F-FB2A-4077-8BC3-AD492C9F9E77}
+	EndGlobalSection
+EndGlobal

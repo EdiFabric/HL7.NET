@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\Program.cs" Link="Program.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileBatch.cs" Link="ReadHL7FileBatch.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileCorrupt.cs" Link="ReadHL7FileCorrupt.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileSplitting.cs" Link="ReadHL7FileSplitting.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileStreaming.cs" Link="ReadHL7FileStreaming.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileStreamingAsync.cs" Link="ReadHL7FileStreamingAsync.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileToEnd.cs" Link="ReadHL7FileToEnd.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileToEndAsync.cs" Link="ReadHL7FileToEndAsync.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileWithADD.cs" Link="ReadHL7FileWithADD.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileWithADDandDSC.cs" Link="ReadHL7FileWithADDandDSC.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileWithCustomFHSorBHS.cs" Link="ReadHL7FileWithCustomFHSorBHS.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileWithDSC.cs" Link="ReadHL7FileWithDSC.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileWithEscapedDelimiters.cs" Link="ReadHL7FileWithEscapedDelimiters.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileWithInheritedTemplate.cs" Link="ReadHL7FileWithInheritedTemplate.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileWithQPD.cs" Link="ReadHL7FileWithQPD.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.ReadHL7\ReadHL7FileWithTemplateResolution.cs" Link="ReadHL7FileWithTemplateResolution.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Examples.HL7.Common\EdiFabric.Examples.HL7.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EdiFabric">
+      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.dll</HintPath>
+    </Reference>
+    <Reference Include="EdiFabric.Templates.Hl7">
+      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.Hl7.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
