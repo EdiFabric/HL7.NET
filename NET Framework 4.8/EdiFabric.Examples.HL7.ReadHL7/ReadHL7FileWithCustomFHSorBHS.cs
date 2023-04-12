@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Hl7;
+using EdiFabric.Examples.HL7.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.Hl726;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MixedTransactions.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\MixedTransactions.txt");
 
             //  Use the base Hl7ReaderBase instead of Hl7Reader
             List<IEdiItem> hl7Items;

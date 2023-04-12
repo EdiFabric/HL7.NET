@@ -17,7 +17,7 @@ namespace EdiFabric.Examples.HL7.JSON
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispense.json");
+            var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispense.json");
             var transaction = Newtonsoft.Json.JsonConvert.DeserializeObject<TSRDSO13>(hl7Stream.LoadToString());
         }
     }

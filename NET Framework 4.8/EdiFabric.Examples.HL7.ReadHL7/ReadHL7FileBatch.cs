@@ -1,4 +1,5 @@
 ﻿using EdiFabric.Core.Model.Hl7;
+using EdiFabric.Examples.HL7.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.Hl726;
 using System.Diagnostics;
@@ -19,7 +20,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MixedTransactions.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\MixedTransactions.txt");
 
             //  2.  Read multiple transactions batched up in the same interchange
             using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))

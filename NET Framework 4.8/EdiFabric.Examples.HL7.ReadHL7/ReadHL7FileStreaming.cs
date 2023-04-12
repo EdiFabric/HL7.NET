@@ -1,4 +1,5 @@
 ﻿using EdiFabric.Core.Model.Hl7;
+using EdiFabric.Examples.HL7.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.Hl726;
 using System.Diagnostics;
@@ -21,7 +22,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispenses.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispenses.txt");
 
             //  2. Read item by item, that is each call to Read() 
             //  brings back either a control segment (or a transaction

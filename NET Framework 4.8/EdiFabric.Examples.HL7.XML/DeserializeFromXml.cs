@@ -18,7 +18,7 @@ namespace EdiFabric.Examples.HL7.XML
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispense.xml");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispense.xml");
 
             var xml = XElement.Load(ediStream);
             var transaction = xml.Deserialize<TSRDSO13>();
@@ -33,7 +33,7 @@ namespace EdiFabric.Examples.HL7.XML
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispense2.xml");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispense2.xml");
 
             var xml = XElement.Load(ediStream);
             var transaction = xml.DeserializeDataContract<TSRDSO13>();

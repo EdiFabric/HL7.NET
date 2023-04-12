@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using EdiFabric.Core.Model.Edi;
+using EdiFabric.Examples.HL7.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.Hl726;
 
@@ -20,7 +21,7 @@ namespace EdiFabric.Examples.HL7.JSON
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispense.txt");
+            var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispense.txt");
 
             List<IEdiItem> hl7Items;
             using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))

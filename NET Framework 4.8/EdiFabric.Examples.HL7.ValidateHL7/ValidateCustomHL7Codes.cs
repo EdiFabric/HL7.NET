@@ -1,6 +1,7 @@
 ﻿using EdiFabric.Core.Annotations.Edi;
 using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
+using EdiFabric.Examples.HL7.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.Hl726;
 using System;
@@ -28,7 +29,7 @@ namespace EdiFabric.Examples.HL7.ValidateHL7
             Dictionary<Type, Type> codeSetMap = new Dictionary<Type, Type>();
             codeSetMap.Add(typeof(HL7_ID_136), typeof(HL7_ID_136_PartnerA));
 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MixedTransactions.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\MixedTransactions.txt");
 
             List<IEdiItem> hl7Items;
             using (var reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
@@ -65,7 +66,7 @@ namespace EdiFabric.Examples.HL7.ValidateHL7
             var codeSetMap = new Dictionary<string, List<string>>();
             codeSetMap.Add("HL7_ID_136", new List<string> { "N", "Y", "M" });
 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MixedTransactions.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\MixedTransactions.txt");
 
             List<IEdiItem> hl7Items;
             using (var reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))

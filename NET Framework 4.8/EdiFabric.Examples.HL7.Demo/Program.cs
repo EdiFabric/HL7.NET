@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
+using EdiFabric.Examples.HL7.Common;
 using EdiFabric.Framework.Readers;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace EdiFabric.Examples.HL7.Demo
         public static void Translate_HL7_26()
         {
             //  Change the path to point to your own file to test with
-            var path = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispense.txt");
+            var path = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispense.txt");
 
             List<IEdiItem> ediItems;
             using (var reader = new Hl7Reader(path, "EdiFabric.Templates.Hl7", new Hl7ReaderSettings { ContinueOnError = true }))

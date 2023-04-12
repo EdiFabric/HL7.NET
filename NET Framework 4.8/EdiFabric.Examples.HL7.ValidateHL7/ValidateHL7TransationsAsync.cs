@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
+using EdiFabric.Examples.HL7.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.Hl726;
 using System;
@@ -22,7 +23,7 @@ namespace EdiFabric.Examples.HL7.ValidateHL7
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispense.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispense.txt");
 
             List<IEdiItem> hl7Items;
             using (var reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))

@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Hl7;
+using EdiFabric.Examples.HL7.Common;
 using EdiFabric.Framework;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.Hl726;
@@ -24,7 +25,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispenses.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispenses.txt");
 
             //  2.  Read all the contents
             List<IEdiItem> hl7Items;
@@ -53,7 +54,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispenses.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispenses.txt");
 
             //  2.  Read all the contents
             List<IEdiItem> hl7Items;

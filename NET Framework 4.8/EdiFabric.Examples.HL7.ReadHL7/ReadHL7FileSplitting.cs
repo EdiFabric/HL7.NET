@@ -2,6 +2,8 @@
 using EdiFabric.Core.Annotations.Validation;
 using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Hl7;
+using EdiFabric.Examples.HL7.Common;
+using EdiFabric.Framework;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.Hl726;
 using System;
@@ -26,7 +28,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MedicalRecord.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\MedicalRecord.txt");
 
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
@@ -48,7 +50,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\MedicalRecord.txt");
+            Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\MedicalRecord.txt");
 
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
