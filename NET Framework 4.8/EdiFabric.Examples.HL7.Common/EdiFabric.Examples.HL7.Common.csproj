@@ -38,7 +38,7 @@
     </Reference>
     <Reference Include="EdiFabric.Templates.Hl7, Version=2.6.7.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Hl7.dll</HintPath>
+      <HintPath>..\..\..\edifabric\net45\EdiFabric.Templates.Hl7.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
