@@ -22,7 +22,7 @@ namespace EdiFabric.Examples.HL7.Demo
 
             //  If you need a different HL7 version or transaction, please contact us at https://support.edifabric.com/hc/en-us/requests/new, EdiFabric supports all versions and transactions for HL7.
 
-            SerialKey.Set(Common.SerialKey.Get());
+            TokenFileCache.Set();
 
             Translate_HL7_26();
         }

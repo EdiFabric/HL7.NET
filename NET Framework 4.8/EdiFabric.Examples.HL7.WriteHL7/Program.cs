@@ -1,10 +1,12 @@
-﻿namespace EdiFabric.Examples.HL7.WriteHL7
+﻿using EdiFabric.Examples.HL7.Common;
+
+namespace EdiFabric.Examples.HL7.WriteHL7
 {
     class Program
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(Common.SerialKey.Get());
+            TokenFileCache.Set();
 
             //  Write EDI to stream and then to string or file
             WriteHL7ToStream.Run();

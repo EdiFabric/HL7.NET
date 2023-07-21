@@ -1,11 +1,13 @@
 ﻿
+using EdiFabric.Examples.HL7.Common;
+
 namespace EdiFabric.Examples.HL7.XML
 {
     class Program
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(Common.SerialKey.Get());
+            TokenFileCache.Set();
 
             //  Serialize to XML
             SerializeToXml.WithXmlSerializer();
