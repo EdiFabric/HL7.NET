@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.HL7.JSON
     {
         static void Main(string[] args)
         {
-            TokenFileCache.Set();
+            SerialKey.Set(Config.TrialSerialKey);
 
             //  Serialize to JSON
             SerializeToJson.Run();

@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
     {
         static void Main(string[] args)
         {
-            TokenFileCache.Set();
+            SerialKey.Set(Config.TrialSerialKey);
 
             //  Read HL7 file to the end
             ReadHL7FileToEnd.Run();

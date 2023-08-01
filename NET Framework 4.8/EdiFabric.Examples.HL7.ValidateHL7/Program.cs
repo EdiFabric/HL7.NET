@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.HL7.ValidateHL7
     {
         static void Main(string[] args)
         {
-            TokenFileCache.Set();
+            SerialKey.Set(Config.TrialSerialKey);
 
             //  Validate custom EDI codes
             ValidateCustomHL7Codes.Run();

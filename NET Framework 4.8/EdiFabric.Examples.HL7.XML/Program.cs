@@ -7,7 +7,7 @@ namespace EdiFabric.Examples.HL7.XML
     {
         static void Main(string[] args)
         {
-            TokenFileCache.Set();
+            SerialKey.Set(Config.TrialSerialKey);
 
             //  Serialize to XML
             SerializeToXml.WithXmlSerializer();
