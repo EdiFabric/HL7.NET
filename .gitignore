@@ -37,3 +37,10 @@
 /NET 6/.vs/ProjectEvaluation
 /NET Framework 4.8/packages
 /Files/token.txt
+/NET Framework 4.8/EdiFabric.Examples.HL7.Common/.vs
+/NET Framework 4.8/EdiFabric.Examples.HL7.Demo/.vs
+/NET Framework 4.8/EdiFabric.Examples.HL7.JSON/.vs
+/NET Framework 4.8/EdiFabric.Examples.HL7.ReadHL7/.vs
+/NET Framework 4.8/EdiFabric.Examples.HL7.ValidateHL7/.vs
+/NET Framework 4.8/EdiFabric.Examples.HL7.WriteHL7/.vs
+/NET Framework 4.8/EdiFabric.Examples.HL7.XML/.vs
