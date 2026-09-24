@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33122.133
+# Visual Studio Version 18
+VisualStudioVersion = 18.10.12217.157 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.HL7.Demo", "EdiFabric.Examples.HL7.Demo\EdiFabric.Examples.HL7.Demo.csproj", "{D6C6BE78-FDD2-43E8-AD96-550031CFA0E1}"
 EndProject
@@ -23,11 +23,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample files", "Sample file
 		..\Files\PharmacyTreatmentDispenseCustom.txt = ..\Files\PharmacyTreatmentDispenseCustom.txt
 		..\Files\PharmacyTreatmentDispenses.txt = ..\Files\PharmacyTreatmentDispenses.txt
 		..\Files\Query.txt = ..\Files\Query.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Getting started", "_Getting started", "{AB50F14F-9B02-4B05-ACFF-F98AEC4BA88F}"
-	ProjectSection(SolutionItems) = preProject
-		..\README.txt = ..\README.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples by feature", "Examples by feature", "{8DD45B63-D26A-4CDC-96D1-1E8B011307E4}"
