@@ -24,7 +24,7 @@ namespace EdiFabric.Examples.HL7.Demo
 
             try
             {
-                SerialKey.Set(Config.TrialSerialKey, true);
+                License.SetSerial(Config.TrialSerialKey);
             }
             catch (Exception ex)
             {

@@ -1,73 +1,172 @@
 # EdiFabric C# .NET Examples for HL7
 
-## 1. Overview
-EdiFabric is a software development kit for .NET Framework and .NET Core, which makes it straightforward to parse, generate, validate, acknowledge, split, customize, or in other words, to programmatically manipulate EDI files. It is written in C# and is distributed as a DLL file and a NuGet package.  
+**EdiFabric 11.0.0** is a .NET SDK that parses, generates, validates, and splits EDI files. These examples cover **HL7 version 2.6**.
 
-It currently supports all message types for the X12, EDIFACT, HL7, and NCPDP EDI standards, the German automotive standard VDA, as well as custom formatted flat files (delimited, positional, or a mixture of both).  
+EdiFabric does not include communication components (AS2 or SFTP), a dashboard, or a UI. It is a library you call from your own application.
 
-> NOTE: EdiFabric does not provide any communication components (AS2 or SFTP, for example), has no dashboard or UI, and is not a full end-to-end EDI solution.
-The best option to get the gist of what EdiFabric is, and can do, is to play around with the trial and examples.  
+The .NET 6 projects compile the same sources as the .NET Framework 4.8 projects. Both solutions reference [EdiFabric 11.0.0](https://www.nuget.org/packages/EdiFabric) and the template packages from NuGet. The examples target .NET 6 for backward compatibility. EdiFabric 11.0.0 also ships targets for .NET 8, .NET 9, and .NET 10. To evaluate one of those, change `TargetFramework` in the project file and rebuild.
 
-The examples are organized into different projects in two logical categories: by product feature and by message type.    
+| Path | Purpose |
+| --- | --- |
+| `NET 6/EdiFabric.Examples.HL7.sln` | .NET 6 solution |
+| `NET Framework 4.8/EdiFabric.Examples.HL7.sln` | .NET Framework 4.8 solution |
+| `NET Framework 4.8/EdiFabric.Examples.HL7.Common/Config.cs` | Serial key shared by every example |
+| `NET Framework 4.8/EdiFabric.Examples.HL7.Demo/Program.cs` | Runnable walkthrough: read, then validate |
+| `Files/` | Sample HL7 messages |
 
-```C#
-var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\PharmacyTreatmentDispenses_RDSO13.txt");
+## Requirements
+
+- Visual Studio 2022, or the .NET SDK. [Download Visual Studio](https://visualstudio.microsoft.com/downloads/).
+- .NET 6 for `NET 6/EdiFabric.Examples.HL7.sln`. The projects set `<TargetFramework>net6.0</TargetFramework>` so they stay compatible with existing .NET 6 apps. EdiFabric 11.0.0 also provides `net8.0`, `net9.0`, and `net10.0`. To evaluate a later version, change that property (for example to `net8.0`) and rebuild.
+- .NET Framework 4.8 for `NET Framework 4.8/EdiFabric.Examples.HL7.sln`.
+
+1. [Sign up free for **Community**](https://www.edifabric.com/pricing.html) to get an evaluation serial key. Community never expires, requires no credit card, and is limited to 250 operations per day for non-production use. After signup, retrieve your serial from [Your Account](https://support.edifabric.com/hc/en-us/articles/360007159031-Your-Account-API-key).
+2. Paste that serial into `TrialSerialKey` in `NET Framework 4.8/EdiFabric.Examples.HL7.Common/Config.cs`. The .NET 6 projects link this file, so one edit covers both solutions.
+
+NuGet restore pulls **EdiFabric 11.0.0** and **EdiFabric.Templates.Hl7 3.0.0**.
+
+## Getting started
+
+**Sign up free for Community** at [edifabric.com/pricing](https://www.edifabric.com/pricing.html) and put your serial in `Config.TrialSerialKey`. Then open a solution, set **EdiFabric.Examples.HL7.Demo** as the startup project, and run it.
+
+From the command line:
+
+```bash
+cd "NET 6/EdiFabric.Examples.HL7.Demo"
+dotnet run
+```
+
+The demo reads `Files/PharmacyTreatmentDispense.txt`, parses every message with `Hl7Reader`, and validates each one with `IsValid`. Set a breakpoint at the end of `Main` and inspect `ediItems`.
+
+To translate your own file, change the path in `EdiFabric.Examples.HL7.Demo/Program.cs`.
+
+## Usage
+
+Every example calls `License.SetSerial` before it reads or writes. On Community that is the call to use. See [Licensing](#licensing) for Developer and Enterprise.
+
+```csharp
+using EdiFabric.Core.Model.Edi;
+using EdiFabric.Framework.Readers;
+using EdiFabric.Templates.Hl726;
+
+License.SetSerial(serial);   // from your Community or paid plan
+
+var hl7Stream = File.OpenRead(@"Files\PharmacyTreatmentDispenses.txt");
 
 List<IEdiItem> hl7Items;
 using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
     hl7Items = hl7Reader.ReadToEnd().ToList();
 
-var transactions = hl7Items.OfType<TSRDSO13>();
-```  
+var dispenses = hl7Items.OfType<TSRDSO13>();
+```
 
-## 2. Requirements
-- Visual Studio, compatible with the supported .NET versions. [Download Visual Studio](https://visualstudio.microsoft.com/downloads/).
-- Minimum .NET Framework 4.8 or .NET 6. 
+`Hl7Reader` takes the stream and the template assembly name. `ReadToEnd` loads the file into memory. For large files, use the streaming samples in **ReadHL7**.
 
-## 3. Serial Key and EdiFabric trial DLLs
-All projects reference EdiFabric EDI Tools as NuGet packages from nuget.org. If you wish to install EdiFabric EDI Tools as DLLs, download the trial DLLs from [here](https://support.edifabric.com/hc/en-us/articles/360000280532-Free-code-to-master-you-EDI-files).
+### Validation
 
-## 4. Setup
-Rebuild the solution with Package Restore enabled. If there are any build errors, manually install the missing packages from [here](https://www.nuget.org/packages?q=edifabric).
+After a message parses, `IsValid` checks it against the template. **ValidateHL7** shows custom codes, data types, and the FHS and BHS control segments.
 
-## 5. Getting started
-To get started, set project EdiFabric.Examples.Hl7.Demo as the startup project, open Program.cs and follow the instructions there. This project allows you to quickly translate your own EDI files.  
+```csharp
+foreach (var message in hl7Items.OfType<EdiMessage>())
+{
+    if (message.HasErrors)
+        continue;
 
-## 6. Examples by feature
-Explore the different features of EdiFabric, such as translating from HL7 file (ReadHL7), generating HL7 file (WriteHL7), validating HL7 transactions (ValidateHL7), 
-import/export from/to JSON , XML, CSV.  
+    MessageErrorContext mec;
+    if (!message.IsValid(out mec))
+    {
+        var validationIssues = mec.Flatten();
+    }
+}
+```
 
-## 7. EDI Validation
-All templates in EdiFabric.Templates.HL7 can be used for validation.  
+### Writing HL7
 
-## 8. EDI Templates
-EdiFabric supports all HL7 versions and message types. We have an extensive library of EDI templates, however, if you can't find a particular transaction, please let us know.   
-The following templates are available out-of-the-box:  
+**WriteHL7** builds a message with `Hl7Writer`. The same project covers custom delimiters, batches (message, BHS, and FHS), empty data elements, and obfuscation.
 
-[HL7](https://support.edifabric.com/hc/en-us/articles/360017128357-HL7-version-2-6)
+```csharp
+using (var stream = new MemoryStream())
+{
+    using (var writer = new Hl7Writer(stream))
+    {
+        writer.Write(SegmentBuilders.BuildDispense("LAB1", "LAB", "DEST2", "DEST", "1"));
+    }
+}
+```
 
-For an interactive view of all templates go to EdiNation (no registration is required):  
-[EdiNation](https://edination.edifabric.com/edi-spec-library.html)
+## Examples by feature
 
-## 9. Trial use
-The trial serial key is valid for 14 days, and using the product with a trial license is subject to EdiFabric's license terms available at https://www.edifabric.com/files/eula.pdf. Upon expiry, the product will begin throwing exceptions. To continue using the trial and the examples, you'll need to request a trial extension.  
+| Project | What it shows |
+| --- | --- |
+| `EdiFabric.Examples.HL7.Demo` | Read a pharmacy treatment dispense and validate it |
+| `EdiFabric.Examples.HL7.ReadHL7` | Read to end, stream, batch, split on a repeating loop, corrupt files, partner templates, ADD and DSC segments, escaped delimiters, custom FHS/BHS |
+| `EdiFabric.Examples.HL7.WriteHL7` | Write to a stream or file, delimiters, batches, empty elements, obfuscation |
+| `EdiFabric.Examples.HL7.ValidateHL7` | Validate messages, custom codes, data types, FHS and BHS |
+| `EdiFabric.Examples.HL7.JSON` | Serialize and deserialize JSON |
+| `EdiFabric.Examples.HL7.XML` | `XmlSerializer` and `DataContractSerializer` |
 
-## 10. Warranty
-*The source code in these example projects is strictly for demonstrational purposes and is provided "AS IS" without warranty of any kind, whether expressed or implied, including but not limited to the implied warranties of merchantability and/or fitness for a particular purpose.*
+For another version on a paid plan, add that model as C# files. See [EDI templates](#edi-templates).
 
-## 11. Additional information
+## Licensing
 
-[Install EdiFabric](https://support.edifabric.com/hc/en-us/articles/360016808578-Install-EdiFabric)
+> [!NOTE]
+> Sign up free for the [Community plan](https://www.edifabric.com/pricing.html)
+> to get an evaluation serial key. Community never expires, requires no credit
+> card, and is for non-production evaluation, learning, and prototyping
+> (250 operations per day). After signup, copy your serial from
+> [Your Account](https://support.edifabric.com/hc/en-us/articles/360007159031-Your-Account-API-key)
+> into `Config.TrialSerialKey`.
+>
+> One operation is one parse, generate, validate, or acknowledge call. The 250-a-day
+> quota is shared across ediFabric .NET, Native, and Cloud. If you hit it, further
+> calls fail until the next day. Upgrade at
+> [edifabric.com/pricing](https://www.edifabric.com/pricing.html) to continue.
+>
+> Use of the product is subject to the [EULA](https://www.edifabric.com/files/eula.pdf).
 
-[Trial and Examples](https://support.edifabric.com/hc/en-us/articles/360000280532-Trial-and-Examples)
+| Plan | What works | Recommended |
+| --- | --- | --- |
+| Community | `License.SetSerial` only. Online check. 250 operations per day. Non-production. | `License.SetSerial` |
+| Developer | `License.SetSerial` and `License.EnsureToken` (`EnsureToken` caches the result for 1 day) | `License.EnsureToken` |
+| Enterprise | `License.SetSerial`, `License.GetToken` / `License.SetToken` | `License.SetToken` (offline tokens) |
 
-[EdiFabric DB](https://support.edifabric.com/hc/en-us/articles/360029265372-EDI-to-DB)
+```csharp
+// Community: authorize against the license server
+License.SetSerial(serial);
 
-[EdiFabric Tutorial](https://support.edifabric.com/hc/en-us/articles/360000291511-Tutorial-EDI-NET-Tools-Basics)
+// Developer (recommended): 1-day built-in cache; refreshes if the token expires within N seconds
+License.EnsureToken(serial, seconds: 3600);
 
-[Knowledge Base](https://support.edifabric.com)
+// Enterprise: set an offline token
+License.SetToken(token);
+```
 
-[Support](https://support.edifabric.com/hc/en-us/requests/new)
+The examples call `License.SetSerial(Config.TrialSerialKey)`. On Developer, call `License.EnsureToken` instead. `TokenFileCache.Set()` in `EdiFabric.Examples.HL7.Common` is the manual `GetToken` / `SetToken` cache, for when you want to store the token yourself.
 
-Last updated on January 29, 2026
+## EDI templates
+
+The models published on NuGet, such as **EdiFabric.Templates.Hl7**, **EdiFabric.Templates.X12**, and **EdiFabric.Templates.Edifact**, are for evaluation only. They are a Community plan limitation. These examples reference **EdiFabric.Templates.Hl7** so you can run the samples on Community.
+
+Paid plans provide every template as plain C# files. Add them to the solution by following [How to create EDI template projects](https://support.edifabric.com/hc/en-us/articles/360016750838-How-to-create-EDI-Template-projects). For evaluation and the Community plan, you can still download the templates in compiled form by following the same article.
+
+The same classes validate as well as parse. EdiFabric supports the HL7 versions. If a message is missing, [ask for it](https://support.edifabric.com/hc/en-us/requests/new).
+
+- [HL7 version 2.6](https://support.edifabric.com/hc/en-us/articles/360017128357-HL7-version-2-6)
+- [EdiNation spec library](https://edination.edifabric.com/edi-spec-library.html) (no registration)
+
+## Warranty
+
+The source code in these example projects is strictly for demonstrational purposes and is provided "AS IS" without warranty of any kind, whether expressed or implied, including but not limited to the implied warranties of merchantability and/or fitness for a particular purpose.
+
+## Links
+
+- [Install EdiFabric](https://support.edifabric.com/hc/en-us/articles/360016808578-Install-EdiFabric)
+- [Tutorial](https://support.edifabric.com/hc/en-us/articles/360000291511-Tutorial-EDI-NET-Tools-Basics)
+- [EDI to database](https://support.edifabric.com/hc/en-us/articles/360029265372-EDI-to-DB)
+- [Knowledge base](https://support.edifabric.com)
+- [Community plan (free signup)](https://www.edifabric.com/pricing.html)
+- [Your Account](https://support.edifabric.com/hc/en-us/articles/360007159031-Your-Account-API-key)
+- [Support](https://support.edifabric.com/hc/en-us/requests/new)
+- Support: support@edifabric.com
+
 ### 2026 © EdiFabric

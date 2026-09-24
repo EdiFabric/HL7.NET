@@ -10,7 +10,7 @@ namespace EdiFabric.Examples.HL7.XML
         {
             try
             {
-                SerialKey.Set(Config.TrialSerialKey, true);
+                License.SetSerial(Config.TrialSerialKey);
             }
             catch (Exception ex)
             {
