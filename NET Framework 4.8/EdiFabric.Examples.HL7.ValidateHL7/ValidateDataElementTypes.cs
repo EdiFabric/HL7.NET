@@ -26,7 +26,7 @@ namespace EdiFabric.Examples.HL7.ValidateHL7
             Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\MixedTransactions.txt");
 
             List<IEdiItem> hl7Items;
-            using (var reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
+            using (var reader = new Hl7Reader(hl7Stream, "EdiFabric.Examples.HL7.Common"))
                 hl7Items = reader.ReadToEnd().ToList();
 
             var dispenses = hl7Items.OfType<TSRDSO13>();

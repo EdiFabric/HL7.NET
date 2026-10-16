@@ -26,7 +26,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
 
             //  2.  Read all the contents
             List<IEdiItem> hl7Items;
-            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
+            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Examples.HL7.Common"))
                 hl7Items = hl7Reader.ReadToEnd().ToList();
 
             //  3.  Pull the required transactions

@@ -24,7 +24,7 @@ namespace EdiFabric.Examples.HL7.XML
             var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispense.txt");
 
             List<IEdiItem> hl7Items;
-            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
+            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Examples.HL7.Common"))
             {
                 hl7Items = hl7Reader.ReadToEnd().ToList();
             }
@@ -49,7 +49,7 @@ namespace EdiFabric.Examples.HL7.XML
             var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispense.txt");
 
             List<IEdiItem> hl7Items;
-            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
+            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Examples.HL7.Common"))
             {
                 hl7Items = hl7Reader.ReadToEnd().ToList();
             }

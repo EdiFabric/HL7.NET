@@ -26,7 +26,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
 
             //  2. Read item by item, that is each call to Read() 
             //  brings back either a control segment (or a transaction
-            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
+            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Examples.HL7.Common"))
             {
                 while (hl7Reader.Read())
                 {

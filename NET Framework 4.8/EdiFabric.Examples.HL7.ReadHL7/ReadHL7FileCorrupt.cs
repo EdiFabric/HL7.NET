@@ -26,7 +26,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
 
             //  Set the continue on error flag to true
             List<IEdiItem> hl7Items;
-            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7", new Hl7ReaderSettings() { ContinueOnError = true }))
+            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Examples.HL7.Common", new Hl7ReaderSettings() { ContinueOnError = true }))
                 hl7Items = hl7Reader.ReadToEnd().ToList();
 
             var readerErrors = hl7Items.OfType<ReaderErrorContext>();

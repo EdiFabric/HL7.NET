@@ -55,7 +55,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
             List<IEdiItem> hl7Items;
-            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
+            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Examples.HL7.Common"))
                 hl7Items = hl7Reader.ReadToEnd().ToList();
 
             var medRecords = hl7Items.OfType<TSMDMT02>();

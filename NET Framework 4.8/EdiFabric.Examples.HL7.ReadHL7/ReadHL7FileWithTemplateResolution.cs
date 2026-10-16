@@ -39,7 +39,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
         public static Assembly AssemblyFactory(MessageContext messageContext)
         {
             if (messageContext.Version == "26")
-                return Assembly.Load("EdiFabric.Templates.Hl7");
+                return Assembly.Load("EdiFabric.Examples.HL7.Common");
 
             throw new Exception(string.Format("Version {0} is not supported.", messageContext.Version));
         }

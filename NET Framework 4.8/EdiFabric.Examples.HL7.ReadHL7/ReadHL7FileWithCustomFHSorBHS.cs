@@ -26,7 +26,7 @@ namespace EdiFabric.Examples.HL7.ReadHL7
 
             //  Use the base Hl7ReaderBase instead of Hl7Reader
             List<IEdiItem> hl7Items;
-            using (var hl7Reader = new Hl7ReaderBase<FHSCustom, BHSCustom>(hl7Stream, "EdiFabric.Templates.Hl7"))
+            using (var hl7Reader = new Hl7ReaderBase<FHSCustom, BHSCustom>(hl7Stream, "EdiFabric.Examples.HL7.Common"))
                 hl7Items = hl7Reader.ReadToEnd().ToList();
 
             var fhs = hl7Items.OfType<FHSCustom>();

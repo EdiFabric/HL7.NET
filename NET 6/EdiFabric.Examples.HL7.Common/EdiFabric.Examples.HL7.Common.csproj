@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\Config.cs" Link="Config.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\EF_HL7_26_Codes.cs" Link="EF_HL7_26_Codes.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\EF_HL7_26_ComplexElements.cs" Link="EF_HL7_26_ComplexElements.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\EF_HL7_26_MDMT02.cs" Link="EF_HL7_26_MDMT02.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\EF_HL7_26_ORUR01.cs" Link="EF_HL7_26_ORUR01.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\EF_HL7_26_QBPZ81.cs" Link="EF_HL7_26_QBPZ81.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\EF_HL7_26_RDSO13.cs" Link="EF_HL7_26_RDSO13.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\EF_HL7_26_Segments.cs" Link="EF_HL7_26_Segments.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\SegmentBuilders.cs" Link="SegmentBuilders.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\StreamExtensions.cs" Link="StreamExtensions.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.HL7.Common\TokenFileCache.cs" Link="TokenFileCache.cs" />
@@ -16,7 +23,6 @@
 
   <ItemGroup>
     <PackageReference Include="EdiFabric" Version="11.0.0" />
-    <PackageReference Include="EdiFabric.Templates.Hl7" Version="3.0.0" />
   </ItemGroup>
 
 </Project>

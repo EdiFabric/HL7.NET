@@ -3,6 +3,8 @@ using EdiFabric.Templates.Hl726;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text.Json;
 
 namespace EdiFabric.Examples.HL7.JSON
 {
@@ -18,7 +20,7 @@ namespace EdiFabric.Examples.HL7.JSON
             Debug.WriteLine("******************************");
 
             var hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\PharmacyTreatmentDispense.json");
-            var transaction = Newtonsoft.Json.JsonConvert.DeserializeObject<TSRDSO13>(hl7Stream.LoadToString());
+            var transaction = JsonSerializer.Deserialize<TSRDSO13>(hl7Stream.LoadToString());
         }
     }
 }

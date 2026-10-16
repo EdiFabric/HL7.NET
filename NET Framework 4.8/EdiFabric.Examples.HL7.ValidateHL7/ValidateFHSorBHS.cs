@@ -20,7 +20,7 @@ namespace EdiFabric.Examples.HL7.ValidateHL7
 
             Stream hl7Stream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\MixedTransactions.txt");
 
-            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Templates.Hl7"))
+            using (var hl7Reader = new Hl7Reader(hl7Stream, "EdiFabric.Examples.HL7.Common"))
             {
                 while (hl7Reader.Read())
                 {
