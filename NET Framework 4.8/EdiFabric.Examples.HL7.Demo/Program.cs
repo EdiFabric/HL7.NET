@@ -22,7 +22,7 @@ namespace EdiFabric.Examples.HL7.Demo
 
             //  If you need a different HL7 version or transaction, please contact us at https://support.edifabric.com/hc/en-us/requests/new, EdiFabric supports all versions and transactions for HL7.
 
-            License.SetSerial(Config.TrialSerialKey);
+            License.EnsureToken(Config.TrialSerialKey, 3600);
             //  Uncomment and then comment out the line above if you wish to use distributed cache for tokens
             //  TokenFileCache.Set();
 

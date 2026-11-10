@@ -7,7 +7,7 @@ namespace EdiFabric.Examples.HL7.ValidateHL7
     {
         static void Main(string[] args)
         {
-            License.SetSerial(Config.TrialSerialKey);
+            License.EnsureToken(Config.TrialSerialKey, 3600);
 
             //  Validate custom EDI codes
             ValidateCustomHL7Codes.Run();
