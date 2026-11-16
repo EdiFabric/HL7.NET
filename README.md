@@ -1,4 +1,6 @@
-# EdiFabric C# .NET Examples for HL7
+# EdiFabric C# .NET Examples for HL7 v2
+
+C# examples for EdiFabric, the .NET HL7 parser and EDI library: read, write and validate **HL7 v2.6** messages such as ADT and ORU, and convert HL7 to JSON. Install EdiFabric from NuGet with `dotnet add package EdiFabric`; it targets .NET 6, 8, 9, 10 and .NET Framework 4.8, and runs without an account on the demo serial key.
 
 **EdiFabric 11.2.0** is a .NET SDK that parses, generates, validates, and splits EDI files. These examples cover **HL7 version 2.6**.
 
